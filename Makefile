@@ -46,6 +46,8 @@ ks-iam: test
 controller-manager: test
 	hack/gobuild.sh cmd/controller-manager
 
+jenkins-role-recover:
+	hack/gobuild.sh tool/cmd/jenkins-role-recover
 # Run go fmt against code 
 fmt:
 	go fmt ./pkg/... ./cmd/...

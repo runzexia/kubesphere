@@ -19,6 +19,7 @@ import (
 )
 
 var DevOpsProjectColumns = GetColumnsFromStruct(&DevOpsProject{})
+var V1DevOpsProjectColumns = GetColumnsFromStruct(V1DevOpsProject{})
 
 const (
 	DevOpsProjectTableName         = "project"
@@ -34,6 +35,17 @@ const (
 type PageableDevOpsProject struct {
 	Items      []*DevOpsProject `json:"items"`
 	TotalCount int              `json:"total_count"`
+}
+
+type V1DevOpsProject struct {
+	ProjectId   string    `json:"project_id" db:"project_id"`
+	Name        string    `json:"name"`
+	Description string    `json:"description,omitempty"`
+	Creator     string    `json:"creator"`
+	CreateTime  time.Time `json:"create_time"`
+	Status      string    `json:"status"`
+	Visibility  string    `json:"visibility,omitempty"`
+	Extra       string    `json:"extra,omitempty"`
 }
 
 type DevOpsProject struct {
