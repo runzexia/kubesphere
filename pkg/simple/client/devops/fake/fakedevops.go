@@ -2,6 +2,7 @@ package fake
 
 import (
 	"io/ioutil"
+	devopsv1alpha3 "kubesphere.io/kubesphere/pkg/apis/devops/v1alpha3"
 	"kubesphere.io/kubesphere/pkg/simple/client/devops"
 	"net/http"
 	"net/url"
@@ -276,15 +277,15 @@ func (d *Devops) DeleteProjectMember(membership *devops.ProjectMembership) (*dev
 }
 
 // ProjectPipelineOperator
-func (d *Devops) CreateProjectPipeline(projectId string, pipeline *devops.ProjectPipeline) (string, error) {
+func (d *Devops) CreateProjectPipeline(projectId string, pipeline *devopsv1alpha3.Pipeline) (string, error) {
 	return "", nil
 }
 func (d *Devops) DeleteProjectPipeline(projectId string, pipelineId string) (string, error) {
 	return "", nil
 }
-func (d *Devops) UpdateProjectPipeline(projectId string, pipeline *devops.ProjectPipeline) (string, error) {
+func (d *Devops) UpdateProjectPipeline(projectId string, pipeline *devopsv1alpha3.Pipeline) (string, error) {
 	return "", nil
 }
-func (d *Devops) GetProjectPipelineConfig(projectId, pipelineId string) (*devops.ProjectPipeline, error) {
+func (d *Devops) GetProjectPipelineConfig(projectId, pipelineId string) (*devopsv1alpha3.Pipeline, error) {
 	return nil, nil
 }
